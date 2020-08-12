@@ -23,10 +23,8 @@ nav {
 }
 
 .logo >img{    
-    display: block;
     height: 120px;
     width: 300px;
-    
 }
 
 .nav-links {   
@@ -37,29 +35,42 @@ nav {
     flex-direction: row;  
 
     a{
-    color:white;
+        color:white;
     letter-spacing: 3px;
     font-weight: bold;
     font-size: 30px; 
-    align-content: center;  
+    align-content: center; 
     }
 }
 
 
-
-
-h1{
-    text-align: center;
-    margin: 50px;
+.formulario{
+    height: 860px;
+    margin:50px;
+}
+.tamaño{
+font-size: 30px;
+margin: 20px;
 }
 
-.cuerpo img{
-    height: 740px;
-    width: 900px;
-    text-align: center;
-    display: block;
-    margin: auto;
-   
+select{
+    font-size: 20px;
+}
+
+button{
+    font-size: 30px;
+    border-radius: 40px;
+    margin: 20px;   
+    padding: 20px;
+    cursor: pointer;
+    :hover{
+        background-color: yellowgreen;
+    }
+}
+
+input{
+    width: 250px;
+    height: 30px;
 }
 
 footer{
