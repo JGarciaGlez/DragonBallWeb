@@ -1,49 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DragonBall</title>
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+        integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
     <link rel="stylesheet" href="./css/contacto.css">
 </head>
 
 <body>
-    <nav>
-        <div class="logo">
-            <img src="./images/logo.png" alt="" srcset="">
+    <header class="hero">
+        <div class="navbar">
+            <div class="logo">
+                <img src="./images/logo.png" alt="" srcset="">
+            </div>
+            <nav>
+                <ul class="nav-links ">
+                    <li> <a href="index.html" class="current">Inicio</a></li>
+                    <li> <a href="galeria.html">Galeria</a></li>
+                    <li> <a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
         </div>
-        <div></div>
-        <ul class="nav-links ">
-            <li> <a href="index.html">Inicio</a></li>
-            <li> <a href="galeria.html">Galeria</a></li>
-            <li> <a href="contacto.html">Contacto</a></li>
-        </ul>
-    </nav>
-    <div class="header-contenido">
-    </div>
-    <section class="formulario">
-      
-        <form action="post" class="tamaño" >
-            <input type="text " name="username"  placeholder="Escribe tu nombre"><br><br>
-            <input type="text " name="Lastname"  placeholder="Escribe tus Apellidos"><br><br>
+    </header>
 
-            <label for="">Elige Tu Personaje DragonBall Favorito: </label>
-            <select id="dragonball">
-                <option label="Goku" value="Goku"></option>
-                <option label="Vegeta" value="Vegeta"></option>
+    <!-- Section :contact Form-->
+    <section id="contact" class="text-center py-3 ">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
 
-            </select>
-            <br><br>
-            <button type="submit">Enviar</button>
-            <button type="reset">Reset</button>
+            <form action="post" class="formm">
+                <div class="text-fields">
+                    <label for="Nombre">Nombre: </label>
+                    <input type="text " name="username" class="name-input" placeholder="Escribe tu nombre">
+                    <label for="Apellidos">Apellidos: </label>
+                    <input type="text " name="Lastname" class="lastname-input" placeholder="Escribe tus Apellidos">
 
-        </form>
+                    <label for="" class="elige-input">Elige Tu Personaje Favorito: </label>
+                    <select id="dragonball" class="elige">
+                        <option label="Goku" value="Goku"></option>
+                        <option label="Vegeta" value="Vegeta"></option>
+                    </select>
 
+                </div>
+                <div class="buttons">
+                    <button type="submit" class="send">Enviar</button>
+                    <button type="reset" class="reset">Reset</button>
+                </div>
+            </form>
+        </div>
     </section>
-    <footer>
 
+
+    <footer class="footer-bg">
+        <div class="social">
+            <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+            <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
+            <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+        </div>
+        <p>Copyright &copy; 2020 - Javier Garcia</p>
     </footer>
+
+
 
 
 </body>

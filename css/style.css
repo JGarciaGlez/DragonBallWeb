@@ -1,31 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,600&display=swap");
 html {
+  box-sizing: border-box;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after {
   -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
   text-decoration: none;
   list-style: none;
   margin: 0px;
   padding: 0px;
 }
 
-nav {
+body {
+  font-family: "Open Sans", sans-serif, sans-serif;
+}
+
+.navbar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  min-height: 15vh;
-  background-color: black;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-height: 5vh;
+  background-color: #000000;
   width: 100%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 0 30px;
+}
+
+.navbar ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navbar a {
+  color: #ffffff;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 30px;
+  border-bottom: 3px transparent solid;
+  -webkit-transition: border-color 0.5s;
+  transition: border-color 0.5s;
+  width: 30%;
+  height: 50px;
+  margin: 0 25px;
+}
+
+.navbar a:hover {
+  border-color: #e6f9ff;
+}
+
+.navbar a.current {
+  border-color: #126A8F;
 }
 
 .logo > img {
@@ -33,47 +67,81 @@ nav {
   width: 300px;
 }
 
-.nav-links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  width: 30%;
-  height: 50px;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.nav-links a {
-  color: white;
-  letter-spacing: 3px;
-  font-weight: bold;
-  font-size: 30px;
-  -ms-flex-line-pack: center;
-      align-content: center;
-}
-
 h1 {
   text-align: center;
   margin: 50px;
 }
 
-.cuerpo img {
-  height: 740px;
-  width: 900px;
-  text-align: center;
-  display: block;
-  margin: auto;
+.main {
+  background-image: url("../images/portada.jpg");
+  height: 100vh;
+  color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
-footer {
-  margin-top: 20px;
-  border: 10px red;
+.footer-bg {
   min-height: 15vh;
-  background-color: black;
+  background-color: #000000;
   width: 100%;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer-bg p {
+  margin-top: 50px;
+}
+
+.social a {
+  color: #ffffff;
+}
+
+.social a > * {
+  margin-right: 30px;
+}
+
+/* Mobile*/
+@media only screen and (max-width: 768px) {
+  .navbar {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 120px;
+    padding: 20px;
+  }
+  .navbar a {
+    padding: 10px 10px;
+    margin: 0 3px;
+    font-size: 18px;
+  }
+  .logo > img {
+    height: 50px;
+    width: 150px;
+  }
+  .main {
+    -webkit-box-flex: 100%;
+        -ms-flex: 100%;
+            flex: 100%;
+    max-width: 100%;
+    background-image: url("../images/portada-movil.png");
+  }
+  .social a > * {
+    margin-top: 30px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

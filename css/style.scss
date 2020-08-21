@@ -1,10 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,600&display=swap');
+@import 'utilies';
+@import 'media';
+
 html {
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after {
+    -webkit-box-sizing: inherit;
     box-sizing: inherit;
     text-decoration: none;
     list-style: none;
@@ -12,60 +18,122 @@ html {
     padding: 0px;
 }
 
-
-nav {
-    display: flex;    
-    justify-content: space-around;
-    min-height: 15vh;
-    background-color: black;
-    width: 100%; 
-    align-items: center; 
+body {
+    font-family: $font-stack, sans-serif;
 }
 
-.logo >img{    
-    display: block;
-    height: 120px;
-    width: 300px;
-    
-}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    min-height: 5vh;
+    background-color: $primary-color;
+    width: 100%;
+    align-items: center;
+    padding: 0 30px;
 
-.nav-links {   
-    display: flex;   
-    justify-content: space-around;
-    width: 30%;   
-    height: 50px;
-    flex-direction: row;  
+    ul {
+        display: flex;
+    }
 
-    a{
-    color:white;
-    letter-spacing: 3px;
-    font-weight: bold;
-    font-size: 30px; 
-    align-content: center;  
+    a {
+        color: $secondary-color;
+        letter-spacing: 3px;
+        font-weight: bold;
+        font-size: 30px;
+        border-bottom: 3px transparent solid;
+        transition: border-color 0.5s;
+        width: 30%;
+        height: 50px;
+        margin: 0 25px;
+
+        &:hover {
+            border-color: $light-color;
+        }
+
+        &.current {
+            border-color: $medium-color;
+        }
     }
 }
 
+.logo>img {
+    height: 120px;
+    width: 300px;
+}
 
 
-
-h1{
+h1 {
     text-align: center;
     margin: 50px;
 }
 
-.cuerpo img{
-    height: 740px;
-    width: 900px;
-    text-align: center;
-    display: block;
-    margin: auto;
-   
+.main {
+    background-image: url('../images/portada.jpg');
+    height: 100vh;
+    color: $secondary-color;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
 }
 
-footer{
-    margin-top: 20px;
-    border: 10px red;
+.footer-bg {
     min-height: 15vh;
-    background-color: black;
+    background-color: $primary-color;
     width: 100%;
+    color: $secondary-color;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    p {
+        margin-top: 50px;
+    }
+}
+
+.social a {
+    color: $secondary-color;
+
+    >* {
+        margin-right: 30px;
+    }
+}
+
+
+/* Mobile*/
+
+@include tablet() {
+    .navbar {
+        flex-direction: column;
+        height: 120px;
+        padding: 20px;
+
+        a {
+            padding: 10px 10px;
+            margin: 0 3px;
+            font-size: 18px;
+        }
+    }
+
+    .logo>img {
+        height: 50px;
+        width: 150px;
+    }
+
+    .main {
+        flex: 100%;
+        max-width: 100%;
+    background-image: url('../images/portada-movil.png');
+   
+      
+    }
+    
+.social a {
+    
+    >* {
+        margin-top: 30px;
+    }
+}
 }

@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,600&display=swap');
+@import 'utilies';
+@import 'media';
+
 html {
     box-sizing: border-box;
 }
+
 *,
 *:before,
 *:after {
@@ -10,52 +15,114 @@ html {
     margin: 0px;
     padding: 0px;
 }
-nav {
-    display: flex;    
-    justify-content: space-around;
-    min-height: 15vh;
-    background-color: black;
-    width: 100%; 
-    align-items: center; 
-}
-.logo >img{    
+
+.logo>img {
     height: 120px;
     width: 300px;
 }
-.nav-links {   
-    display: flex;   
-    justify-content: space-around;
-    width: 30%;   
-    height: 50px;
-    flex-direction: row;  
 
-    a{
-        color:white;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    min-height: 5vh;
+    background-color: $primary-color;
+    width: 100%;
+    align-items: center;
+    padding: 0 30px;
+
+    ul {
+        display: flex;
+    }
+
+    a {
+        color: $secondary-color;
         letter-spacing: 3px;
         font-weight: bold;
-        font-size: 30px; 
-        align-content: center; 
+        font-size: 30px;
+        border-bottom: 3px transparent solid;
+        transition: border-color 0.5s;
+        width: 30%;
+        height: 50px;
+        margin: 0 25px;
+
+        &:hover {
+            border-color: $light-color;
+        }
+
+        &.current {
+            border-color: $medium-color;
+        }
     }
 }
 
 
-img{
-    width: 100%;
-    height: 400px;       
+
+img {
+    max-width: 100%;
+    height: 400px;
 }
 
 .grid-container {
-    margin: 20px;
+    margin: 10px;
     display: grid;
-    grid-template-columns: auto auto auto;    
+    grid-template-columns: auto auto auto;
     grid-auto-rows: minmax(100px, auto);
-      
-  } 
 
-  footer{
-    margin-top: 20px;
-    border: 10px red;
+}
+
+
+.footer-bg {
     min-height: 15vh;
-    background-color: black;
+    background-color: $primary-color;
     width: 100%;
+    color: $secondary-color;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    p {
+        margin-top: 50px;
+    }
+}
+
+.social a {
+    color: $secondary-color;
+
+    >* {
+        margin-right: 30px;
+    }
+}
+
+
+/* Mobile*/
+
+@include tablet() {
+    .navbar {
+        flex-direction: column;
+        height: 120px;
+        padding: 20px;
+
+        a {
+            padding: 10px 10px;
+            margin: 0 3px;
+            font-size: 18px;
+        }
+    }
+
+    .logo>img {
+        height: 50px;
+        width: 150px;
+    } 
+
+    .social a {
+        >* {
+            margin-top: 30px;
+        }
+    }
+    .grid-container{
+       grid-template-columns: 300px;
+       justify-content: center;
+    }
 }

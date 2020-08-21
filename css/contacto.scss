@@ -1,10 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,600&display=swap');
+@import 'utilies';
+@import 'media';
+
+
 html {
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after {
+    -webkit-box-sizing: inherit;
     box-sizing: inherit;
     text-decoration: none;
     list-style: none;
@@ -12,71 +19,145 @@ html {
     padding: 0px;
 }
 
-
-nav {
-    display: flex;    
-    justify-content: space-around;
-    min-height: 15vh;
-    background-color: black;
-    width: 100%; 
-    align-items: center; 
+body {
+    font-family: $font-stack, sans-serif;
 }
 
-.logo >img{    
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    min-height: 5vh;
+    background-color: $primary-color;
+    width: 100%;
+    align-items: center;
+    padding: 0 30px;
+
+    ul {
+        display: flex;
+    }
+
+    a {
+        color: $secondary-color;
+        letter-spacing: 3px;
+        font-weight: bold;
+        font-size: 2rem;
+        border-bottom: 3px transparent solid;
+        transition: border-color 0.5s;
+        width: 30%;
+        height: 50px;
+        margin: 0 25px;
+
+        &:hover {
+            border-color: $light-color;
+        }
+
+        &.current {
+            border-color: $medium-color;
+        }
+    }
+}
+
+.logo>img {
     height: 120px;
     width: 300px;
 }
 
-.nav-links {   
-    display: flex;   
-    justify-content: space-around;
-    width: 30%;   
-    height: 50px;
-    flex-direction: row;  
-
-    a{
-        color:white;
-    letter-spacing: 3px;
+//Contact Page
+.section-title {
+    text-align: center;
+    font-size: 3rem;
     font-weight: bold;
-    font-size: 30px; 
-    align-content: center; 
+    
+   }
+
+.text-fields {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 0.5rem 1rem ;
+    
+    
+    & input {
+        width: 250px;
+        height: 30px;
     }
 }
 
 
-.formulario{
-    height: 860px;
-    margin:50px;
-}
-.tamaño{
-font-size: 30px;
-margin: 20px;
+.name-input, .lastname-input, .elige, .buttons, .section-title{
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 
-select{
-    font-size: 20px;
+.elige{   
+    height: 40px;
+    width: 90px;
+    font-size: 1rem;
 }
 
-button{
-    font-size: 30px;
-    border-radius: 40px;
-    margin: 20px;   
-    padding: 20px;
-    cursor: pointer;
-    :hover{
-        background-color: yellowgreen;
+.buttons {
+      display: flex;
+    justify-content: center;
+    align-items: center;
+    & .send{
+        font-size: 1rem;
+        font-weight: 700;
+        color:#3498db;
+        border: 4px solid;
+        border-radius: 15 px;
+        width: 200px;
+        height: 60px;
+        cursor: pointer;
+        text-transform: uppercase; 
+        margin-right: 10px; 
+         
+      
+        &:hover{
+            background-color:#001c2e ;
+            transition: 4s;
+        }
+
+    }
+
+    & .reset{
+        font-size: 1rem;
+        font-weight: 700;
+        width: 200px;
+        height: 60px;
+        cursor: pointer;
+        text-transform: uppercase;
+       color:#940707 ;
+       border: 4px solid;
+       border-radius: 15 px;
+          &:hover{
+           background-color:#180000;
+           transition:4s;
+       }
     }
 }
 
-input{
-    width: 250px;
-    height: 30px;
-}
-
-footer{
-    margin-top: 20px;
-    border: 10px red;
+.footer-bg {
     min-height: 15vh;
-    background-color: black;
+    background-color: $primary-color;
     width: 100%;
+    color: $secondary-color;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top:505px;
+
+    p {
+        margin-top: 50px;
+    }
+}
+
+.social a {
+    color: $secondary-color;
+
+    >* {
+        margin-right: 30px;
+    }
 }
